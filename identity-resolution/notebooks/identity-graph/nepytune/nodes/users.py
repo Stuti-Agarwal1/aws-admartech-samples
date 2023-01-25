@@ -38,6 +38,14 @@ def generate_persistent_nodes(src, dst):
             for data in json_lines_file(f_h):
                 writer.add(
                     _id=data["pid"],
-                    attribute_map={"pid": data["pid"]},
-                    label="persistentId",
+                    attribute_map={"travel_origin": data["travel_origin"],
+                                   "travel_destination": data["travel_destination"],
+                                   "travel_seat": data["travel_seat"],
+                                   "travel_seat": data["travel_seat"],
+                                  "travel_insurance": data["travel_insurance"],
+                                  "extra_baggage": data["extra_baggage"],
+                                   "meal": data["meal"],
+                                  }
+                   				
+                    label="travel_details",
                 )
