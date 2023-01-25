@@ -2,9 +2,11 @@ from collections import namedtuple
 
 from nepytune.write_utils import gremlin_writer, GremlinNodeCSV, json_lines_file
 from nepytune.utils import hash_
+'''
+passengerID:String	bookingID:String	dob:String	gender:Int	nationality:String	contact_no:String
+'''
 
-
-IPLoc = namedtuple("IPLoc", "state, city, ip_address")
+IPLoc = namedtuple("IPLoc", "passengerID, city, ip_address")
 
 
 def get_id(ip_loc):
@@ -32,5 +34,5 @@ def generate_ip_loc_nodes_from_facts(src, dst):
                         "city": location.city,
                         "ip_address": location.ip_address,
                     },
-                    label="IP",
+                    label="Passenger",
                 )
